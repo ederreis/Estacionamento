@@ -1,6 +1,9 @@
 /Estacionamento.Infra/obj
+/Estacionamento.Infra/bin
 /EstacionamentoContext.Domain/obj
+/EstacionamentoContext.Domain/bin
 /EstacionamentoContext.Shared/obj
+/EstacionamentoContext.Shared/bin
 /EstacionamentoContext.Tests/obj
 /EstacionamentoContext.Tests/bin
 /EstacionamentoWeb/obj
