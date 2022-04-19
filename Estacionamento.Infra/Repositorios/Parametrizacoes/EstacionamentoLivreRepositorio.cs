@@ -20,11 +20,11 @@ namespace Estacionamento.Infra.Repositorios.Parametrizacoes
 			if (lista == null || lista.Count() == 0)
 				return new List<EstacionamentoLivre>()
 				{
-					new EstacionamentoLivre(DayOfWeek.Monday, 
+					new EstacionamentoLivre(DayOfWeek.Monday,
 						new ControleVigencia(DateTime.Parse("11:30"), DateTime.Parse("13:00"))),
-					new EstacionamentoLivre(DayOfWeek.Wednesday, 
+					new EstacionamentoLivre(DayOfWeek.Wednesday,
 						new ControleVigencia(DateTime.Parse("11:30"), DateTime.Parse("13:00"))),
-					new EstacionamentoLivre(DayOfWeek.Thursday, 
+					new EstacionamentoLivre(DayOfWeek.Thursday,
 						new ControleVigencia(DateTime.Parse("11:30"), DateTime.Parse("13:00")))
 				};
 
@@ -33,10 +33,10 @@ namespace Estacionamento.Infra.Repositorios.Parametrizacoes
 
 		public void SalvarEstacionamentoLivre(EstacionamentoLivre estacionamentoLivre)
 		{
-			if (estacionamentoLivre.Id == 0)
-				_contexto.EstacionamentoLivre.Add(estacionamentoLivre);
-			else
+			if (estacionamentoLivre.Persistido)
 				_contexto.EstacionamentoLivre.Update(estacionamentoLivre);
+			else
+				_contexto.EstacionamentoLivre.Add(estacionamentoLivre);
 		}
 	}
 }

@@ -25,8 +25,6 @@ namespace Estacionamento.Infra.Mapeamentos.Parametrizacoes
 					.HasColumnName("VIGENCIA_FINAL")
 					.HasColumnType("DATETIME")
 					.IsRequired();
-
-				controleVigencia.Ignore(x => x.Notifications);
 			});
 		}
 	}

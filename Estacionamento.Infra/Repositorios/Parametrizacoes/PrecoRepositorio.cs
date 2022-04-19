@@ -16,10 +16,10 @@ namespace Estacionamento.Infra.Repositorios.Parametrizacoes
 
 		public void SalvarParametrizacao(Preco preco)
 		{
-			if (preco.Id == 0)
-				_contexto.Precos.Add(preco);
-			else
+			if (preco.Persistido)
 				_contexto.Precos.Update(preco);
+			else
+				_contexto.Precos.Add(preco);
 		}
 	}
 }

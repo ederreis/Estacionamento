@@ -39,10 +39,6 @@ namespace EstacionamentoContext.Domain.Agregados
 				
 			Condutor = condutor;
 
-			Veiculo.AdicionarCondutor(Condutor);
-
-			AddNotifications(Veiculo.Notifications);
-
 			AddNotifications(condutor.Notifications);
 		}
 

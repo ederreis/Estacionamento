@@ -44,7 +44,7 @@ namespace EstacionamentoContext.Domain.Handlers
 
 			if (preco == null)
 			{
-				AddNotification("Preco", "Sem registro tabela preço vigencia parametrizado.");
+				AddNotification("Preco", "Sem registro de preço vigencia parametrizado.");
 
 				return new ResultadoComando(IsValid, Notifications.Select(notificacao => notificacao.Message).ToArray());
 			}
@@ -59,7 +59,7 @@ namespace EstacionamentoContext.Domain.Handlers
 
 				if (contratoEmAberto != null)
 				{
-					AddNotification("Contrato", $"Contrato com veiculo já firmado em {contratoEmAberto.EntradaEm}.");
+					AddNotification("Contrato", $"Contrato com veiculo já firmado em {contratoEmAberto.EntradaEm.ToShortDateString()}.");
 
 					return new ResultadoComando(IsValid, Notifications.Select(notificacao => notificacao.Message).ToArray());
 				}
@@ -71,7 +71,7 @@ namespace EstacionamentoContext.Domain.Handlers
 			{
 				_veiculoRepositorio.SalvarVeiculo(veiculo);
 
-				_aluguelVagaRepositorio.SalvarAgregado(aluguel);
+				_aluguelVagaRepositorio.SalvarContrato(aluguel);
 
 				_aluguelVagaRepositorio.Salvar();
 

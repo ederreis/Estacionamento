@@ -26,8 +26,6 @@ namespace Estacionamento.Infra.Mapeamentos.Parametrizacoes
 					.HasColumnName("VALOR_HORA_ADICIONAL")
 					.HasColumnType("MONEY")
 					.IsRequired();
-
-				valorHora.Ignore(x => x.Notifications);
 			});
 
 			builder.OwnsOne(x => x.ControleVigencia, controle => 
@@ -40,8 +38,6 @@ namespace Estacionamento.Infra.Mapeamentos.Parametrizacoes
 					.HasColumnName("VIGENCIA_FINAL")
 					.HasColumnType("DATETIME")
 					.IsRequired();
-
-				controle.Ignore(x => x.Notifications);
 			});
 
 			builder.Property(x => x.CadastradoEm)

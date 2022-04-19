@@ -26,13 +26,12 @@ namespace Estacionamento.Infra.Repositorios.Cliente
 				.DistinctBy(x => x.Condutor!.Id)
 				.Select(x => x.Condutor);
 		
-
 		public void SalvarCondutor(Condutor condutor)
 		{
-			if (condutor.Id == 0)
-				_contexto.Condutores.Add(condutor);
-			else
+			if (condutor.Persistido)
 				_contexto.Condutores.Update(condutor);
+			else
+				_contexto.Condutores.Add(condutor);
 		}
 	}
 }

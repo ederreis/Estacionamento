@@ -7,13 +7,6 @@
 
 		}
 
-		public Tolerancia(int inicial, int adicional) : this()
-		{
-			Inicial = inicial;
-
-			Adicional = adicional;
-		}
-
 		public int Inicial { get; private set; } = 30;
 
 		public int Adicional { get; private set; } = 10;

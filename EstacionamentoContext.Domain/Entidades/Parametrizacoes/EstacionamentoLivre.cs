@@ -11,6 +11,11 @@ namespace EstacionamentoContext.Domain.Entidades.Parametrizacoes
 		{
 			DiaDaSemana = diaDaSemana;
 
+			ParametrizarHoras(controleVigencia);
+		}
+
+		private void ParametrizarHoras(ControleVigencia controleVigencia)
+		{
 			var inicio = DateTime.MinValue;
 			var final = DateTime.MinValue;
 
@@ -67,6 +72,20 @@ namespace EstacionamentoContext.Domain.Entidades.Parametrizacoes
 		public DayOfWeek DiaDaSemana { get; private set; }
 
 		public ControleVigencia ControleVigencia { get; private set; } = null!;
+
+		public void MudarControleVigencia(ControleVigencia controleVigencia)
+		{
+			if (controleVigencia == null)
+			{
+				AddNotification(nameof(controleVigencia), "Controle Vigencia nulo");
+
+				return;
+			}
+
+			ParametrizarHoras(controleVigencia);
+
+			AddNotifications(controleVigencia.Notifications);
+		}
 
 		public static QuantidadeTickDesconto ObterPeriodoEstacionamentoLivre(IReadOnlyCollection<EstacionamentoLivre> estacionamentosLivre , DateTime entrada, DateTime saida)
 		{

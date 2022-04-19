@@ -65,12 +65,12 @@ namespace Estacionamento.Infra.Repositorios.Agregado
 			.Include(x => x.Veiculo)
 			.SingleOrDefault(AluguelVagaAgregadoQueries.BuscarContratoNaoFinalizado(placa));
 
-		public void SalvarAgregado(AluguelVagaAgregado agregado)
+		public void SalvarContrato(AluguelVagaAgregado agregado)
 		{
-			if (agregado.Id == 0)
-				_contexto.Agregados.Add(agregado);
-			else
+			if (agregado.Persistido)
 				_contexto.Agregados.Update(agregado);
+			else
+				_contexto.Agregados.Add(agregado);				
 		}
 	}
 }

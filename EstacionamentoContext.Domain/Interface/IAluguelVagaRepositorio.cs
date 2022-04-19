@@ -17,7 +17,7 @@ namespace EstacionamentoContext.Domain.Interface
 
 		IReadOnlyCollection<AluguelVagaAgregado?> BuscarContratosPorVeiculo(Placa placa);
 
-		void SalvarAgregado(AluguelVagaAgregado agregado);
+		void SalvarContrato(AluguelVagaAgregado agregado);
 
 		bool AlgumContratoEmAberto(DateTime inicio, DateTime final);
 

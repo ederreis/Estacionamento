@@ -48,7 +48,10 @@ namespace EstacionamentoContext.Domain.Handlers
 			var estacionamentoLivre = _estacionamentoLivreRepositorio.ListarEstacionamentoLivre()
 				.FirstOrDefault(x => x.DiaDaSemana == diaDaSemana);
 
-			estacionamentoLivre = new EstacionamentoLivre(diaDaSemana, controleVigencia);
+			if (estacionamentoLivre == null)
+				estacionamentoLivre = new EstacionamentoLivre(diaDaSemana, controleVigencia);
+			else
+				estacionamentoLivre!.MudarControleVigencia(controleVigencia);
 
 			if (!estacionamentoLivre.IsValid)
 				InformarNotificacoes(estacionamentoLivre.Notifications);

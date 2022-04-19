@@ -22,8 +22,6 @@ namespace Estacionamento.Infra.Configuracoes
 			
 			collection.AddScoped<IPrecoRepositorio, PrecoRepositorio>();
 			
-			collection.AddScoped<IToleranciaRepositorio, ToleranciaRepositorio>();
-			
 			collection.AddScoped<IVeiculoRepositorio, VeiculoRepositorio>();
 		}
 	}

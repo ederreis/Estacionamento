@@ -1,5 +1,4 @@
 ﻿using EstacionamentoContext.Domain.Entidades.Bem;
-using EstacionamentoContext.Domain.Entidades.Cliente;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -23,24 +22,7 @@ namespace Estacionamento.Infra.Mapeamentos.Bem
 					.HasColumnName("REGISTRO")
 					.HasColumnType("NVARCHAR(7)")
 					.IsRequired();
-
-				placa.Ignore(x => x.Notifications);
 			});
-
-			builder.HasMany(x => x.Condutores)
-				.WithMany(x => x.Veiculos)
-				.UsingEntity<Dictionary<string, object>>(
-					"VeiculoCondutor",
-						veiculo => veiculo.HasOne<Condutor>()
-							.WithMany()
-							.HasForeignKey("CONDUTORID")
-							.HasConstraintName("FK_VEICULOCONDUTOR_CONDUTORID")
-							.OnDelete(DeleteBehavior.Restrict),
-						condutores => condutores.HasOne<Veiculo>()
-							.WithMany()
-							.HasForeignKey("VEICULOID")
-							.HasConstraintName("FK_VEICULOCONDUTOR_VEICULOID")
-							.OnDelete(DeleteBehavior.Restrict));
 
 			builder.Property(x => x.CadastradoEm)
 				.HasColumnName("CADASTRADO_EM")

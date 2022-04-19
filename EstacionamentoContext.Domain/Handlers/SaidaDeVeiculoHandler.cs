@@ -1,7 +1,6 @@
 ﻿using EstacionamentoContext.Domain.Agregados;
 using EstacionamentoContext.Domain.Comandos;
 using EstacionamentoContext.Domain.Entidades.Cliente;
-using EstacionamentoContext.Domain.Entidades.Parametrizacoes;
 using EstacionamentoContext.Domain.Interface;
 using EstacionamentoContext.Domain.ObjetoValores;
 using EstacionamentoContext.Shared.Comandos;
@@ -14,18 +13,18 @@ namespace EstacionamentoContext.Domain.Handlers
 	{
 		private readonly ICondutorRepositorio _condutorRepositorio;
 
-		private readonly IAluguelVagaRepositorio _eventoRepositorio;
+		private readonly IAluguelVagaRepositorio _aluguelVagaRepositorio;
 		
 		private readonly IVeiculoRepositorio _veiculoRepositorio;
 
 		public SaidaDeVeiculoHandler(
 			ICondutorRepositorio condutorRepositorio,
-			IAluguelVagaRepositorio eventoRepositorio,
+			IAluguelVagaRepositorio aluguelVagaRepositorio,
 			IVeiculoRepositorio veiculoRepositorio)
 		{
 			_condutorRepositorio = condutorRepositorio;
 
-			_eventoRepositorio = eventoRepositorio;
+			_aluguelVagaRepositorio = aluguelVagaRepositorio;
 
 			_veiculoRepositorio = veiculoRepositorio;
 		}
@@ -45,7 +44,7 @@ namespace EstacionamentoContext.Domain.Handlers
 
 			var registroPlaca = (Placa)comando!.RegistroPlaca;
 
-			var contratoAluguelEmAberto = _eventoRepositorio.BuscarRegistroEmAberto(registroPlaca);
+			var contratoAluguelEmAberto = _aluguelVagaRepositorio.BuscarRegistroEmAberto(registroPlaca);
 
 			if (contratoAluguelEmAberto == null)
 			{
@@ -84,9 +83,9 @@ namespace EstacionamentoContext.Domain.Handlers
 
 			try
 			{
-				_eventoRepositorio.SalvarAgregado(contratoAluguelEmAberto);
+				_aluguelVagaRepositorio.SalvarContrato(contratoAluguelEmAberto);
 
-				_eventoRepositorio.Salvar();
+				_aluguelVagaRepositorio.Salvar();
 
 				return new ResultadoComando(IsValid, "Registrada a saída do veículo.");
 			}
@@ -145,9 +144,9 @@ namespace EstacionamentoContext.Domain.Handlers
 
 				_veiculoRepositorio.SalvarVeiculo(contratoAluguelEmAberto.Veiculo);
 
-				_eventoRepositorio.SalvarAgregado(contratoAluguelEmAberto);
+				_aluguelVagaRepositorio.SalvarContrato(contratoAluguelEmAberto);
 
-				_eventoRepositorio.Salvar();
+				_aluguelVagaRepositorio.Salvar();
 
 				return new ResultadoComando(IsValid, "Registrada a saída do veículo.");
 			}

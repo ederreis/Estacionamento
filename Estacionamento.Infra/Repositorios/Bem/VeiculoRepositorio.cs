@@ -21,11 +21,10 @@ namespace Estacionamento.Infra.Repositorios.Bem
 
 		public void SalvarVeiculo(Veiculo veiculo)
 		{
-			if (veiculo.Id == 0)
-				_contexto.Veiculos.Add(veiculo);
-			else
+			if (veiculo.Persistido)
 				_contexto.Veiculos.Update(veiculo);
+			else
+				_contexto.Veiculos.Add(veiculo);
 		}
-
 	}
 }

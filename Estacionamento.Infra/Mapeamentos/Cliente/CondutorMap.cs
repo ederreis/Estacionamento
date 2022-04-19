@@ -34,7 +34,6 @@ namespace Estacionamento.Infra.Mapeamentos.Cliente
 					.HasColumnName("SOBRE_NOME")
 					.HasColumnType("NVARCHAR(30)")
 					.IsRequired();
-				nome.Ignore(x => x.Notifications);
 			});
 
 			builder.Property(x => x.QtdTicket50PorCentoDesconto)
