@@ -1,0 +1,8 @@
+/Estacionamento.Infra/obj
+/EstacionamentoContext.Domain/obj
+/EstacionamentoContext.Shared/obj
+/EstacionamentoContext.Tests/obj
+/EstacionamentoContext.Tests/bin
+/EstacionamentoWeb/obj
+/EstacionamentoWeb/bin
+/.vs
