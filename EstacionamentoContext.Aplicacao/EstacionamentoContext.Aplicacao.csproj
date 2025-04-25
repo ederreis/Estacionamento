@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EstacionamentoContext.Domain\EstacionamentoContext.Domain.csproj" />
-	<ProjectReference Include="..\Estacionamento.Services\Estacionamento.Services.csproj" />  
+	<ProjectReference Include="..\EstacionamentoContext.Services\EstacionamentoContext.Services.csproj" />  
   </ItemGroup>
 
 </Project>

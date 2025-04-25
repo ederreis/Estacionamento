@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Estacionamento.Infra.Mapeamentos.Agregados;
+namespace EstacionamentoContext.Infra.Mapeamentos.Agregados;
 
 public class AluguelVagaAgregadoMap : IEntityTypeConfiguration<AluguelVagaAgregado>
 {

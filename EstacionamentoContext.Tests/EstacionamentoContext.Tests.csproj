@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-	<ProjectReference Include="..\Estacionamento.Services\Estacionamento.Services.csproj" />
+	<ProjectReference Include="..\EstacionamentoContext.Services\EstacionamentoContext.Services.csproj" />
     <ProjectReference Include="..\EstacionamentoContext.Domain\EstacionamentoContext.Domain.csproj" />
     <ProjectReference Include="..\EstacionamentoContext.Shared\EstacionamentoContext.Shared.csproj" />
   </ItemGroup>

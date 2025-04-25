@@ -11,11 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstacionamentoContext.Share
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstacionamentoContext.Tests", "EstacionamentoContext.Tests\EstacionamentoContext.Tests.csproj", "{C34D7584-83E3-4A59-A0E4-0598270B0C15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estacionamento.Infra", "Estacionamento.Infra\Estacionamento.Infra.csproj", "{1D6ECCA4-2733-4C9B-B14A-D5E14417693C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstacionamentoContext.Infra", "EstacionamentoContext.Infra\EstacionamentoContext.Infra.csproj", "{1D6ECCA4-2733-4C9B-B14A-D5E14417693C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estacionamento.Aplicacao", "Estacionamento.Aplicacao\Estacionamento.Aplicacao.csproj", "{0D4DFF99-24C0-4E7B-B7BF-41F560E20883}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstacionamentoContext.Aplicacao", "EstacionamentoContext.Aplicacao\EstacionamentoContext.Aplicacao.csproj", "{0D4DFF99-24C0-4E7B-B7BF-41F560E20883}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estacionamento.Services", "Estacionamento.Services\Estacionamento.Services.csproj", "{02163431-CB2C-44B5-93F6-114D64BDDF9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstacionamentoContext.Services", "EstacionamentoContext.Services\EstacionamentoContext.Services.csproj", "{02163431-CB2C-44B5-93F6-114D64BDDF9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

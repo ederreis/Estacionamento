@@ -1,11 +1,11 @@
-﻿using Estacionamento.Infra.Contexto;
+﻿using EstacionamentoContext.Infra.Contexto;
 using EstacionamentoContext.Domain.Agregados;
 using EstacionamentoContext.Domain.Interface;
 using EstacionamentoContext.Domain.ObjetoValores;
 using EstacionamentoContext.Domain.Queries;
 using Microsoft.EntityFrameworkCore;
 
-namespace Estacionamento.Infra.Repositorios.Agregado;
+namespace EstacionamentoContext.Infra.Repositorios.Agregado;
 
 public class AluguelVagaRepositorio :
 	Repositorio<AluguelVagaAgregado>,

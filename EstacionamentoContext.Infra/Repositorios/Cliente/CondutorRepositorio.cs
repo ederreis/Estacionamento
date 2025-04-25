@@ -1,10 +1,10 @@
-﻿using Estacionamento.Infra.Contexto;
+﻿using EstacionamentoContext.Infra.Contexto;
 using EstacionamentoContext.Domain.Entidades.Cliente;
 using EstacionamentoContext.Domain.Interface;
 using EstacionamentoContext.Domain.ObjetoValores;
 using EstacionamentoContext.Domain.Queries;
 
-namespace Estacionamento.Infra.Repositorios.Cliente;
+namespace EstacionamentoContext.Infra.Repositorios.Cliente;
 
 public class CondutorRepositorio :
 	Repositorio<Condutor>,

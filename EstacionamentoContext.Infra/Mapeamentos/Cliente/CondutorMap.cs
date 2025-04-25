@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Estacionamento.Infra.Mapeamentos.Cliente;
+namespace EstacionamentoContext.Infra.Mapeamentos.Cliente;
 
 public class CondutorMap : IEntityTypeConfiguration<Condutor>
 {

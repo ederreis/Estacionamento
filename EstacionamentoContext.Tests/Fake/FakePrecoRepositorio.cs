@@ -2,7 +2,6 @@
 using EstacionamentoContext.Domain.Interface;
 using EstacionamentoContext.Domain.ObjetoValores;
 using EstacionamentoContext.Domain.Queries;
-using System.Globalization;
 
 namespace EstacionamentoContext.Tests.Fake
 {

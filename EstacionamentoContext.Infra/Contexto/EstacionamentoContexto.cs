@@ -1,14 +1,14 @@
-﻿using Estacionamento.Infra.Mapeamentos.Agregados;
-using Estacionamento.Infra.Mapeamentos.Bem;
-using Estacionamento.Infra.Mapeamentos.Cliente;
-using Estacionamento.Infra.Mapeamentos.Parametrizacoes;
+﻿using EstacionamentoContext.Infra.Mapeamentos.Agregados;
+using EstacionamentoContext.Infra.Mapeamentos.Bem;
+using EstacionamentoContext.Infra.Mapeamentos.Cliente;
+using EstacionamentoContext.Infra.Mapeamentos.Parametrizacoes;
 using EstacionamentoContext.Domain.Agregados;
 using EstacionamentoContext.Domain.Entidades.Bem;
 using EstacionamentoContext.Domain.Entidades.Cliente;
 using EstacionamentoContext.Domain.Entidades.Parametrizacoes;
 using Microsoft.EntityFrameworkCore;
 
-namespace Estacionamento.Infra.Contexto;
+namespace EstacionamentoContext.Infra.Contexto;
 
 public class EstacionamentoContexto : DbContext
 {

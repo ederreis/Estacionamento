@@ -1,10 +1,10 @@
-﻿using Estacionamento.Infra.Contexto;
+﻿using EstacionamentoContext.Infra.Contexto;
 using EstacionamentoContext.Domain.Entidades.Bem;
 using EstacionamentoContext.Domain.Interface;
 using EstacionamentoContext.Domain.ObjetoValores;
 using EstacionamentoContext.Domain.Queries;
 
-namespace Estacionamento.Infra.Repositorios.Bem;
+namespace EstacionamentoContext.Infra.Repositorios.Bem;
 
 public class VeiculoRepositorio :
 	Repositorio<Veiculo>,

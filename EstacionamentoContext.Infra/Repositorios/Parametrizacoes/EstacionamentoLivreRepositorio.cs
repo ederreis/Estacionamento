@@ -1,9 +1,9 @@
-﻿using Estacionamento.Infra.Contexto;
+﻿using EstacionamentoContext.Infra.Contexto;
 using EstacionamentoContext.Domain.Entidades.Parametrizacoes;
 using EstacionamentoContext.Domain.Interface;
 using EstacionamentoContext.Domain.ObjetoValores;
 
-namespace Estacionamento.Infra.Repositorios.Parametrizacoes;
+namespace EstacionamentoContext.Infra.Repositorios.Parametrizacoes;
 
 public class EstacionamentoLivreRepositorio :
 	Repositorio<EstacionamentoLivre>,

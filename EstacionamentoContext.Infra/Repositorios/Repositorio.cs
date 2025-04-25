@@ -1,8 +1,8 @@
-﻿using Estacionamento.Infra.Contexto;
+﻿using EstacionamentoContext.Infra.Contexto;
 using EstacionamentoContext.Domain.Interface;
 using Microsoft.EntityFrameworkCore;
 
-namespace Estacionamento.Infra.Repositorios;
+namespace EstacionamentoContext.Infra.Repositorios;
 
 public class Repositorio<T> : IRepositorio<T> where T : class
 {

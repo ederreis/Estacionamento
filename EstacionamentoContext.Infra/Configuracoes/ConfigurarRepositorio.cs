@@ -1,12 +1,12 @@
-﻿using Estacionamento.Infra.Contexto;
-using Estacionamento.Infra.Repositorios.Agregado;
-using Estacionamento.Infra.Repositorios.Bem;
-using Estacionamento.Infra.Repositorios.Cliente;
-using Estacionamento.Infra.Repositorios.Parametrizacoes;
+﻿using EstacionamentoContext.Infra.Contexto;
+using EstacionamentoContext.Infra.Repositorios.Agregado;
+using EstacionamentoContext.Infra.Repositorios.Bem;
+using EstacionamentoContext.Infra.Repositorios.Cliente;
+using EstacionamentoContext.Infra.Repositorios.Parametrizacoes;
 using EstacionamentoContext.Domain.Interface;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Estacionamento.Infra.Configuracoes;
+namespace EstacionamentoContext.Infra.Configuracoes;
 
 public static class ConfigurarRepositorio
 {

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Estacionamento.Infra.Mapeamentos.Bem;
+namespace EstacionamentoContext.Infra.Mapeamentos.Bem;
 
 public class VeiculoMap : IEntityTypeConfiguration<Veiculo>
 {

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Estacionamento.Infra.Mapeamentos.Parametrizacoes;
+namespace EstacionamentoContext.Infra.Mapeamentos.Parametrizacoes;
 
 public class PrecoMap : IEntityTypeConfiguration<Preco>
 {
