@@ -1,6 +1,5 @@
-﻿namespace EstacionamentoContext.Shared.Comandos
+﻿namespace EstacionamentoContext.Shared.Comandos;
+
+public interface IResultadoComando
 {
-	public interface IResultadoComando
-	{
-	}
 }

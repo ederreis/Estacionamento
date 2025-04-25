@@ -1,9 +1,8 @@
 ﻿using EstacionamentoContext.Shared.Comandos;
 
-namespace EstacionamentoContext.Shared.Handlers
+namespace EstacionamentoContext.Shared.Handlers;
+
+public interface IHandler<T> where T : IComando
 {
-	public interface IHandler<T> where T : IComando
-	{
-		IResultadoComando Handle(T comando);
-	}
+	IResultadoComando Handle(T comando);
 }

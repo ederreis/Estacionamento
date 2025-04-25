@@ -1,14 +1,13 @@
 ﻿using EstacionamentoContext.Domain.Entidades.Cliente;
 using EstacionamentoContext.Domain.ObjetoValores;
 
-namespace EstacionamentoContext.Domain.Interface
+namespace EstacionamentoContext.Domain.Interface;
+
+public interface ICondutorRepositorio : IRepositorio<Condutor>
 {
-	public interface ICondutorRepositorio : IRepositorio<Condutor>
-	{
-		IEnumerable<Condutor?> BuscarCondutorPorPlaca(Placa placa);
+	IEnumerable<Condutor?> BuscarCondutorPorPlaca(Placa placa);
 
-		Condutor? BuscarCondutorPorCpf(CPF cpf);
+	Condutor? BuscarCondutorPorCpf(CPF cpf);
 
-		void SalvarCondutor(Condutor condutor);
-	}
+	void SalvarCondutor(Condutor condutor);
 }

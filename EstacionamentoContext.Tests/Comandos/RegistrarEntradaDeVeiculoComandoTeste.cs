@@ -1,4 +1,4 @@
-﻿using EstacionamentoContext.Domain.Comandos;
+﻿using EstacionamentoContext.Services.Comandos;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace EstacionamentoContext.Tests.Comandos
@@ -8,7 +8,7 @@ namespace EstacionamentoContext.Tests.Comandos
 	{
 		private RegistrarEntradaVeiculoComando comando;
 
-		public RegistrarEntradaDeVeiculoComandoTeste() => comando = new RegistrarEntradaVeiculoComando();		
+		public RegistrarEntradaDeVeiculoComandoTeste() => comando = new RegistrarEntradaVeiculoComando();
 
 		[TestMethod]
 		public void DeveRetornarErroQuandoPlacaRegistroEstiverErrada()

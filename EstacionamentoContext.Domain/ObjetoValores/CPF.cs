@@ -1,15 +1,14 @@
-﻿namespace EstacionamentoContext.Domain.ObjetoValores
+﻿namespace EstacionamentoContext.Domain.ObjetoValores;
+
+public class CPF
 {
-	public class CPF
-	{
-		private CPF() { }
+	private CPF() { }
 
-		private CPF(string numero) => Numero = numero;
+	private CPF(string numero) => Numero = numero;
 
-		public string Numero { get; private set; }
+	public string Numero { get; private set; }
 
-		public override string ToString() => Numero;
+	public override string ToString() => Numero;
 
-		public static implicit operator CPF(string numero) => new CPF(numero);
-	}
+	public static implicit operator CPF(string numero) => new CPF(numero);
 }

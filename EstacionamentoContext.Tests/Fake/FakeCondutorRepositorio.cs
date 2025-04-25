@@ -1,6 +1,6 @@
 ﻿using EstacionamentoContext.Domain.Entidades.Cliente;
-using EstacionamentoContext.Domain.ObjetoValores;
 using EstacionamentoContext.Domain.Interface;
+using EstacionamentoContext.Domain.ObjetoValores;
 
 namespace EstacionamentoContext.Tests.Fake
 {
@@ -11,17 +11,17 @@ namespace EstacionamentoContext.Tests.Fake
 		public FakeCondutorRepositorio(FakeVeiculoRepositorio fakeVeiculoRepositorio)
 		{
 			var cpf = (CPF)"01234567891";
-			
+
 			_condutores.Add(
 				new Condutor((CPF)"01234567891",
 					new Nome("Eder", "Reis"),
-					fakeVeiculoRepositorio._veiculos.First(), 
+					fakeVeiculoRepositorio._veiculos.First(),
 					2,
 					DateTime.Now
 					));
 		}
 
-		public IEnumerable<Condutor?> BuscarCondutorPorPlaca(Placa placa) 
+		public IEnumerable<Condutor?> BuscarCondutorPorPlaca(Placa placa)
 			=> _condutores.FindAll(x => x.Veiculos.Where(y => y.Placa.Registro == placa.Registro).Count() > 0);
 
 		public Condutor? BuscarCondutorPorCpf(CPF cpf) => _condutores.FirstOrDefault(x => x.Cpf.Numero == cpf.Numero);
@@ -36,7 +36,7 @@ namespace EstacionamentoContext.Tests.Fake
 
 				return;
 			}
-				
+
 			_condutores.Insert(indice, condutor);
 		}
 

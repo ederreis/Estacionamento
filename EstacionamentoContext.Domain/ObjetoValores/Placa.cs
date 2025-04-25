@@ -1,17 +1,16 @@
 ﻿using EstacionamentoContext.Shared.ObjetoValores;
 
-namespace EstacionamentoContext.Domain.ObjetoValores
+namespace EstacionamentoContext.Domain.ObjetoValores;
+
+public class Placa : ObjetoValor
 {
-	public class Placa : ObjetoValor
-	{
-		private Placa() { }
+	private Placa() { }
 
-		private Placa(string registro) => Registro = registro;
-			
-		public string Registro { get; private set; }
+	private Placa(string registro) => Registro = registro;
 
-		public override string ToString() => Registro;
+	public string Registro { get; private set; }
 
-		public static implicit operator Placa(string registro) => new Placa(registro.ToUpper());
-	}
+	public override string ToString() => Registro;
+
+	public static implicit operator Placa(string registro) => new Placa(registro.ToUpper());
 }

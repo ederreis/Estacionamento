@@ -1,117 +1,135 @@
 ﻿using EstacionamentoContext.Domain.ObjetoValores;
 using EstacionamentoContext.Shared.Entidades;
 
-namespace EstacionamentoContext.Domain.Entidades.Parametrizacoes
+namespace EstacionamentoContext.Domain.Entidades.Parametrizacoes;
+
+public sealed class EstacionamentoLivre : Entidade
 {
-	public sealed class EstacionamentoLivre : Entidade
+	private EstacionamentoLivre() { }
+
+	public EstacionamentoLivre(DayOfWeek diaDaSemana, ControleVigencia controleVigencia)
 	{
-		private EstacionamentoLivre() { }
+		DiaDaSemana = diaDaSemana;
 
-		public EstacionamentoLivre(DayOfWeek diaDaSemana, ControleVigencia controleVigencia)
+		ParametrizarHoras(controleVigencia);
+	}
+
+	private void ParametrizarHoras(ControleVigencia controleVigencia)
+	{
+		var inicio = DateTime.MinValue;
+		var final = DateTime.MinValue;
+
+		switch (DiaDaSemana)
 		{
-			DiaDaSemana = diaDaSemana;
+			case DayOfWeek.Monday:
+				break;
+			case DayOfWeek.Tuesday:
 
-			var inicio = DateTime.MinValue;
-			var final = DateTime.MinValue;
+				inicio = inicio.AddDays(1);
 
-			switch (DiaDaSemana)
-			{
-				case DayOfWeek.Monday:
-					break;
-				case DayOfWeek.Tuesday:
+				break;
+			case DayOfWeek.Wednesday:
 
-					inicio = inicio.AddDays(1);
+				inicio = inicio.AddDays(2);
 
-					break;
-				case DayOfWeek.Wednesday:
+				break;
+			case DayOfWeek.Thursday:
 
-					inicio = inicio.AddDays(2);
+				inicio = inicio.AddDays(3);
 
-					break;
-				case DayOfWeek.Thursday:
+				break;
+			case DayOfWeek.Friday:
 
-					inicio = inicio.AddDays(3);
+				inicio = inicio.AddDays(4);
 
-					break;
-				case DayOfWeek.Friday:
+				break;
+			case DayOfWeek.Saturday:
 
-					inicio = inicio.AddDays(4);
+				inicio = inicio.AddDays(5);
 
-					break;
-				case DayOfWeek.Saturday:
+				break;
+			case DayOfWeek.Sunday:
 
-					inicio = inicio.AddDays(5);
+				inicio = inicio.AddDays(7);
 
-					break;
-				case DayOfWeek.Sunday:
-
-					inicio = inicio.AddDays(7);
-
-					break;
-				default: throw new NotImplementedException();
-			}
-
-			var horaFinal = new TimeSpan(controleVigencia.Final.Hour, controleVigencia.Final.Minute, controleVigencia.Final.Second);
-
-			final = inicio.Date.Add(horaFinal);
-
-			var horaInicial = new TimeSpan(controleVigencia.Inicio.Hour, controleVigencia.Inicio.Minute, controleVigencia.Inicio.Second);
-
-			inicio = inicio.Date.Add(horaInicial);
-
-			ControleVigencia = new ControleVigencia(inicio, final);
-
-			AddNotifications(ControleVigencia.Notifications);
+				break;
+			default: throw new NotImplementedException();
 		}
 
-		public DayOfWeek DiaDaSemana { get; private set; }
+		var horaFinal = new TimeSpan(controleVigencia.Final.Hour, controleVigencia.Final.Minute, controleVigencia.Final.Second);
 
-		public ControleVigencia ControleVigencia { get; private set; } = null!;
+		final = inicio.Date.Add(horaFinal);
 
-		public static QuantidadeTickDesconto ObterPeriodoEstacionamentoLivre(IReadOnlyCollection<EstacionamentoLivre> estacionamentosLivre , DateTime entrada, DateTime saida)
+		var horaInicial = new TimeSpan(controleVigencia.Inicio.Hour, controleVigencia.Inicio.Minute, controleVigencia.Inicio.Second);
+
+		inicio = inicio.Date.Add(horaInicial);
+
+		ControleVigencia = new ControleVigencia(inicio, final);
+
+		AddNotifications(ControleVigencia.Notifications);
+	}
+
+	public DayOfWeek DiaDaSemana { get; private set; }
+
+	public ControleVigencia ControleVigencia { get; private set; } = null!;
+
+	public void MudarControleVigencia(ControleVigencia controleVigencia)
+	{
+		if (controleVigencia == null)
 		{
-			int qtd = 0;
+			AddNotification(nameof(controleVigencia), "Controle Vigencia nulo");
 
-			long ticks = 0;
+			return;
+		}
 
-			for (var diaEmQuestao = entrada; diaEmQuestao.Date <= saida.Date; diaEmQuestao = diaEmQuestao.AddDays(1))
+		ParametrizarHoras(controleVigencia);
+
+		AddNotifications(controleVigencia.Notifications);
+	}
+
+	public static QuantidadeTickDesconto ObterPeriodoEstacionamentoLivre(IReadOnlyCollection<EstacionamentoLivre> estacionamentosLivre, DateTime entrada, DateTime saida)
+	{
+		int qtd = 0;
+
+		long ticks = 0;
+
+		for (var diaEmQuestao = entrada; diaEmQuestao.Date <= saida.Date; diaEmQuestao = diaEmQuestao.AddDays(1))
+		{
+			var estacionamentoLivre = estacionamentosLivre.FirstOrDefault(x => x.DiaDaSemana == diaEmQuestao.DayOfWeek);
+
+			if (estacionamentoLivre == null)
+				continue;
+
+			if (diaEmQuestao.DayOfWeek == estacionamentoLivre.DiaDaSemana)
 			{
-				var estacionamentoLivre = estacionamentosLivre.FirstOrDefault(x => x.DiaDaSemana == diaEmQuestao.DayOfWeek);
+				var inicio = estacionamentoLivre.ControleVigencia.Inicio.TimeOfDay;
+				var final = estacionamentoLivre.ControleVigencia.Final.TimeOfDay;
 
-				if (estacionamentoLivre == null)
-					continue;
-
-				if (diaEmQuestao.DayOfWeek == estacionamentoLivre.DiaDaSemana)
+				if ((diaEmQuestao.Date < saida.Date && diaEmQuestao.Date > entrada.Date) ||
+					(entrada.TimeOfDay <= final && diaEmQuestao.Date == entrada.Date) ||
+					(saida.TimeOfDay >= inicio && diaEmQuestao.Date == saida.Date))
 				{
-					var inicio = estacionamentoLivre.ControleVigencia.Inicio.TimeOfDay;
-					var final = estacionamentoLivre.ControleVigencia.Final.TimeOfDay;
+					qtd++;
 
-					if ((diaEmQuestao.Date < saida.Date && diaEmQuestao.Date > entrada.Date) ||
-						(entrada.TimeOfDay <= final && diaEmQuestao.Date == entrada.Date) ||
-						(saida.TimeOfDay >= inicio && diaEmQuestao.Date == saida.Date))
-					{
-						qtd++;
-
-						ticks += (final - inicio).Ticks;
-					}
+					ticks += (final - inicio).Ticks;
 				}
 			}
-
-			return new QuantidadeTickDesconto(qtd, ticks);
 		}
 
-		public struct QuantidadeTickDesconto
+		return new QuantidadeTickDesconto(qtd, ticks);
+	}
+
+	public struct QuantidadeTickDesconto
+	{
+		public QuantidadeTickDesconto(int quantidade, long ticks)
 		{
-			public QuantidadeTickDesconto(int quantidade, long ticks)
-			{
-				Quantidade = quantidade;
+			Quantidade = quantidade;
 
-				Ticks = ticks;
-			}
-
-			public int Quantidade { get; private set; }
-
-			public long Ticks { get; private set; }
+			Ticks = ticks;
 		}
+
+		public int Quantidade { get; private set; }
+
+		public long Ticks { get; private set; }
 	}
 }

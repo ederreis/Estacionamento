@@ -1,7 +1,6 @@
-﻿namespace EstacionamentoContext.Domain.Model
+﻿namespace EstacionamentoContext.Domain.Model;
+
+public class EntradaVeiculoModel
 {
-	public class EntradaVeiculoModel
-	{
-		public string RegistroPlaca { get; set; }
-	}
+	public string RegistroPlaca { get; set; }
 }

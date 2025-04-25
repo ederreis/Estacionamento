@@ -1,6 +1,6 @@
 ﻿using EstacionamentoContext.Domain.Entidades.Bem;
-using EstacionamentoContext.Domain.ObjetoValores;
 using EstacionamentoContext.Domain.Interface;
+using EstacionamentoContext.Domain.ObjetoValores;
 
 namespace EstacionamentoContext.Tests.Fake
 {

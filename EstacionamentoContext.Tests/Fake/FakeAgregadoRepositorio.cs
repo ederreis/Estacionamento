@@ -36,7 +36,7 @@ namespace EstacionamentoContext.Tests.Fake
 
 		public void Salvar()
 		{
-			
+
 		}
 
 		public IReadOnlyCollection<AluguelVagaAgregado?> BuscarContratosEmAberto()
@@ -69,9 +69,9 @@ namespace EstacionamentoContext.Tests.Fake
 			throw new NotImplementedException();
 		}
 
-		public void SalvarAgregado(AluguelVagaAgregado agregado)
+		public void SalvarContrato(AluguelVagaAgregado agregado)
 		{
-			
+
 		}
 	}
 }

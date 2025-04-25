@@ -13,7 +13,7 @@ namespace EstacionamentoContext.Tests.Fake
 		{
 			var valorHora = new ValorHora(1, 1);
 
-			var controleVigencia = new ControleVigencia(DateTime.Parse("01/01/2022"), DateTime.Parse("31/12/2022"));
+			var controleVigencia = new ControleVigencia(new DateTime(year: DateTime.Now.Year, month: 1, day: 1), new DateTime(year: DateTime.Now.Year, month: 12, day: 31));
 
 			var preco = new Preco(valorHora, controleVigencia);
 
@@ -21,7 +21,7 @@ namespace EstacionamentoContext.Tests.Fake
 		}
 
 		public Preco? BuscarPrecoParametrizadoPorData(DateTime entrada)
-			=> _precos.AsQueryable().FirstOrDefault(PrecoQueries.BuscarPorData(entrada));		
+			=> _precos.AsQueryable().FirstOrDefault(PrecoQueries.BuscarPorData(entrada));
 
 		public void SalvarParametrizacao(Preco preco)
 		{
@@ -39,7 +39,7 @@ namespace EstacionamentoContext.Tests.Fake
 
 		public void Salvar()
 		{
-		
+
 		}
 	}
 }

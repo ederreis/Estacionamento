@@ -1,5 +1,5 @@
-using Estacionamento.Infra.Configuracoes;
-using EstacionamentoContext.Domain.Configuracoes;
+using EstacionamentoContext.Infra.Configuracoes;
+using EstacionamentoContext.Aplicacao.Configuracoes;
 
 var builder = WebApplication.CreateBuilder(args);
 

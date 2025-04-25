@@ -2,11 +2,10 @@
 using EstacionamentoContext.Domain.ObjetoValores;
 using System.Linq.Expressions;
 
-namespace EstacionamentoContext.Domain.Queries
+namespace EstacionamentoContext.Domain.Queries;
+
+public static class CondutorQueries
 {
-	public static class CondutorQueries
-	{
-		public static Expression<Func<Condutor, bool>> BuscaPorCpf(CPF cpf)
-			=> x => x.Cpf.Numero == cpf.Numero;		
-	}
+	public static Expression<Func<Condutor, bool>> BuscaPorCpf(CPF cpf)
+		=> x => x.Cpf.Numero == cpf.Numero;
 }
