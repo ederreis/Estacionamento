@@ -1,5 +1,5 @@
-﻿using EstacionamentoContext.Domain.Comandos;
-using EstacionamentoContext.Domain.Handlers;
+﻿using EstacionamentoContext.Services.Comandos;
+using EstacionamentoContext.Services.Handlers;
 using EstacionamentoContext.Tests.Fake;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

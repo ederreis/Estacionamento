@@ -4,34 +4,33 @@ using EstacionamentoContext.Domain.Interface;
 using EstacionamentoContext.Domain.ObjetoValores;
 using EstacionamentoContext.Domain.Queries;
 
-namespace Estacionamento.Infra.Repositorios.Cliente
+namespace Estacionamento.Infra.Repositorios.Cliente;
+
+public class CondutorRepositorio :
+	Repositorio<Condutor>,
+	ICondutorRepositorio
 {
-	public class CondutorRepositorio :
-		Repositorio<Condutor>,
-		ICondutorRepositorio
+	public CondutorRepositorio(EstacionamentoContexto contexto) : base(contexto)
 	{
-		public CondutorRepositorio(EstacionamentoContexto contexto) : base(contexto)
-		{
-		}
+	}
 
-		public Condutor? BuscarCondutorPorCpf(CPF cpf)
-			=> _contexto.Condutores
-				.AsQueryable()
-				.FirstOrDefault(CondutorQueries.BuscaPorCpf(cpf));
+	public Condutor? BuscarCondutorPorCpf(CPF cpf)
+		=> _contexto.Condutores
+			.AsQueryable()
+			.FirstOrDefault(CondutorQueries.BuscaPorCpf(cpf));
 
-		public IEnumerable<Condutor?> BuscarCondutorPorPlaca(Placa placa)
-			=> _contexto.Agregados
-				.AsQueryable()
-				.Where(AluguelVagaAgregadoQueries.BuscarAluguelVagaPorPlacaComCondutor(placa))
-				.DistinctBy(x => x.Condutor!.Id)
-				.Select(x => x.Condutor);
-		
-		public void SalvarCondutor(Condutor condutor)
-		{
-			if (condutor.Persistido)
-				_contexto.Condutores.Update(condutor);
-			else
-				_contexto.Condutores.Add(condutor);
-		}
+	public IEnumerable<Condutor?> BuscarCondutorPorPlaca(Placa placa)
+		=> _contexto.Agregados
+			.AsQueryable()
+			.Where(AluguelVagaAgregadoQueries.BuscarAluguelVagaPorPlacaComCondutor(placa))
+			.DistinctBy(x => x.Condutor!.Id)
+			.Select(x => x.Condutor);
+
+	public void SalvarCondutor(Condutor condutor)
+	{
+		if (condutor.Persistido)
+			_contexto.Condutores.Update(condutor);
+		else
+			_contexto.Condutores.Add(condutor);
 	}
 }

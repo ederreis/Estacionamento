@@ -1,11 +1,11 @@
-﻿using EstacionamentoContext.Domain.Comandos;
-using EstacionamentoContext.Domain.Handlers;
+﻿using EstacionamentoContext.Services.Comandos;
+using EstacionamentoContext.Services.Handlers;
 using EstacionamentoContext.Domain.Interface;
 using EstacionamentoContext.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace EstacionamentoContext.Domain.Controllers
+namespace EstacionamentoContext.Aplicacao.Controllers
 {
 	[ApiController]
 	public class RegistroEstacionamentoLivreController : ControllerBase
@@ -15,7 +15,7 @@ namespace EstacionamentoContext.Domain.Controllers
 			Tags = new[] { "EstacionamentoLivre" })]
 		[HttpPost("/Parametrizar/RegistroEstacionamentoLivre")]
 		public IActionResult ParametrizarEstacionamentoLivre(
-			[FromServices] IEstacionamentoLivreRepositorio estacionamentoLivreRepositorio, 
+			[FromServices] IEstacionamentoLivreRepositorio estacionamentoLivreRepositorio,
 			[FromServices] IAluguelVagaRepositorio aluguelVagaRepositorio,
 			[FromBody] EstacionamentoLivreModel model)
 		{

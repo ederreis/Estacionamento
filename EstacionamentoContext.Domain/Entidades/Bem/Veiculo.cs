@@ -1,15 +1,14 @@
 ﻿using EstacionamentoContext.Domain.ObjetoValores;
 using EstacionamentoContext.Shared.Entidades;
 
-namespace EstacionamentoContext.Domain.Entidades.Bem
+namespace EstacionamentoContext.Domain.Entidades.Bem;
+
+public class Veiculo : Entidade
 {
-	public class Veiculo : Entidade
-	{
-		private Veiculo() { }
+	private Veiculo() { }
 
-		public Veiculo(Placa placa) : base()
-			=> Placa = placa;
+	public Veiculo(Placa placa) : base()
+		=> Placa = placa;
 
-		public Placa Placa { get; private set; } = null!;
-	}
+	public Placa Placa { get; private set; } = null!;
 }

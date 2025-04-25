@@ -1,7 +1,6 @@
-﻿namespace EstacionamentoContext.Domain.Interface
+﻿namespace EstacionamentoContext.Domain.Interface;
+
+public interface IRepositorio<T> where T : class
 {
-	public interface IRepositorio<T> where T : class
-	{
-		void Salvar();
-	}
+	void Salvar();
 }

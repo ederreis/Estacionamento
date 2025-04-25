@@ -4,27 +4,26 @@ using EstacionamentoContext.Domain.Interface;
 using EstacionamentoContext.Domain.ObjetoValores;
 using EstacionamentoContext.Domain.Queries;
 
-namespace Estacionamento.Infra.Repositorios.Bem
+namespace Estacionamento.Infra.Repositorios.Bem;
+
+public class VeiculoRepositorio :
+	Repositorio<Veiculo>,
+	IVeiculoRepositorio
 {
-	public class VeiculoRepositorio : 
-		Repositorio<Veiculo>, 
-		IVeiculoRepositorio
+	public VeiculoRepositorio(EstacionamentoContexto contexto) : base(contexto)
 	{
-		public VeiculoRepositorio(EstacionamentoContexto contexto) : base(contexto)
-		{
-		}
+	}
 
-		public Veiculo? BuscarVeiculoPorPlaca(Placa placa)
-		=> _contexto.Veiculos
-			.AsQueryable()
-			.FirstOrDefault(VeiculoQueries.BucaPorPlaca(placa));
+	public Veiculo? BuscarVeiculoPorPlaca(Placa placa)
+	=> _contexto.Veiculos
+		.AsQueryable()
+		.FirstOrDefault(VeiculoQueries.BucaPorPlaca(placa));
 
-		public void SalvarVeiculo(Veiculo veiculo)
-		{
-			if (veiculo.Persistido)
-				_contexto.Veiculos.Update(veiculo);
-			else
-				_contexto.Veiculos.Add(veiculo);
-		}
+	public void SalvarVeiculo(Veiculo veiculo)
+	{
+		if (veiculo.Persistido)
+			_contexto.Veiculos.Update(veiculo);
+		else
+			_contexto.Veiculos.Add(veiculo);
 	}
 }

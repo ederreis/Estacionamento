@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace EstacionamentoContext.Domain.Controllers
+namespace EstacionamentoContext.Aplicacao.Controllers
 {
 	[ApiController]
 	public class RelatoriosController : ControllerBase

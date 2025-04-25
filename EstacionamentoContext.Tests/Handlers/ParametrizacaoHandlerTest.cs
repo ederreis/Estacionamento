@@ -1,5 +1,5 @@
-﻿using EstacionamentoContext.Domain.Comandos;
-using EstacionamentoContext.Domain.Handlers;
+﻿using EstacionamentoContext.Services.Comandos;
+using EstacionamentoContext.Services.Handlers;
 using EstacionamentoContext.Tests.Fake;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -11,7 +11,7 @@ namespace EstacionamentoContext.Tests.Handlers
 		[TestMethod]
 		public void DeveRetornarErroPrecoErrado()
 		{
-			var comando = new RegistrarPrecoComando( -1, -1, DateTime.Now, DateTime.Now.AddDays(365));
+			var comando = new RegistrarPrecoComando(-1, -1, DateTime.Now, DateTime.Now.AddDays(365));
 
 			var fakePrecoRepositorio = new FakePrecoRepositorio();
 
@@ -99,7 +99,7 @@ namespace EstacionamentoContext.Tests.Handlers
 			};
 
 			var repositorio = new FakeEstacionamentoLivreRepositorio();
-			
+
 			var handler = new ParamEstacionamentoLivreHandler(repositorio, new FakeAgregadoRepositorio(new FakeVeiculoRepositorio()));
 
 			handler.Handle(comando);

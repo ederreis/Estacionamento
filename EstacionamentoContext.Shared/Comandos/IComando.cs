@@ -1,7 +1,6 @@
-﻿namespace EstacionamentoContext.Shared.Comandos
+﻿namespace EstacionamentoContext.Shared.Comandos;
+
+public interface IComando
 {
-	public interface IComando
-	{
-		void Validar();
-	}
+	void Validar();
 }

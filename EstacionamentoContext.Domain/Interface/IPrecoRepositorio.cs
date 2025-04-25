@@ -1,11 +1,10 @@
 ﻿using EstacionamentoContext.Domain.Entidades.Parametrizacoes;
 
-namespace EstacionamentoContext.Domain.Interface
-{
-	public interface IPrecoRepositorio :IRepositorio<Preco>
-	{
-		Preco? BuscarPrecoParametrizadoPorData(DateTime entrada);
+namespace EstacionamentoContext.Domain.Interface;
 
-		void SalvarParametrizacao(Preco preco);
-	}
+public interface IPrecoRepositorio : IRepositorio<Preco>
+{
+	Preco? BuscarPrecoParametrizadoPorData(DateTime entrada);
+
+	void SalvarParametrizacao(Preco preco);
 }

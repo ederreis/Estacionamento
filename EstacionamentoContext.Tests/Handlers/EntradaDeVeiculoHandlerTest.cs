@@ -1,5 +1,5 @@
-﻿using EstacionamentoContext.Domain.Comandos;
-using EstacionamentoContext.Domain.Handlers;
+﻿using EstacionamentoContext.Services.Comandos;
+using EstacionamentoContext.Services.Handlers;
 using EstacionamentoContext.Tests.Fake;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -8,7 +8,7 @@ namespace EstacionamentoContext.Tests.Handlers
 	[TestClass]
 	public class EntradaDeVeiculoHandlerTest
 	{
-		[TestMethod] 
+		[TestMethod]
 		public void DeveRetornarErroQuandoVeiculoForInvalido()
 		{
 			var comando = new RegistrarEntradaVeiculoComando() { RegistroPlaca = "ABC11" };

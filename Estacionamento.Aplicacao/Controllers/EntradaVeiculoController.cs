@@ -1,18 +1,18 @@
-﻿using EstacionamentoContext.Domain.Comandos;
-using EstacionamentoContext.Domain.Handlers;
-using EstacionamentoContext.Domain.Interface;
+﻿using EstacionamentoContext.Domain.Interface;
 using EstacionamentoContext.Domain.Model;
+using EstacionamentoContext.Services.Comandos;
+using EstacionamentoContext.Services.Handlers;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace EstacionamentoContext.Domain.Controllers
+namespace EstacionamentoContext.Aplicacao.Controllers
 {
 	[ApiController]
 	public class EntradaVeiculoController : ControllerBase
 	{
 		[SwaggerOperation(
 			OperationId = "PostVeiculo",
-			Tags = new[]{"Veiculo"})]
+			Tags = new[] { "Veiculo" })]
 		[HttpPost("/EntradaVeiculo")]
 		public IActionResult EntradaVeiculo(
 			[FromServices] IVeiculoRepositorio veiculoRepositorio,
@@ -30,6 +30,6 @@ namespace EstacionamentoContext.Domain.Controllers
 				return Ok(retorno);
 			else
 				return BadRequest(retorno);
-		}	
+		}
 	}
 }

@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstacionamentoContext.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estacionamento.Infra", "Estacionamento.Infra\Estacionamento.Infra.csproj", "{1D6ECCA4-2733-4C9B-B14A-D5E14417693C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estacionamento.Aplicacao", "Estacionamento.Aplicacao\Estacionamento.Aplicacao.csproj", "{0D4DFF99-24C0-4E7B-B7BF-41F560E20883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estacionamento.Services", "Estacionamento.Services\Estacionamento.Services.csproj", "{02163431-CB2C-44B5-93F6-114D64BDDF9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{1D6ECCA4-2733-4C9B-B14A-D5E14417693C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D6ECCA4-2733-4C9B-B14A-D5E14417693C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D6ECCA4-2733-4C9B-B14A-D5E14417693C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D4DFF99-24C0-4E7B-B7BF-41F560E20883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D4DFF99-24C0-4E7B-B7BF-41F560E20883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D4DFF99-24C0-4E7B-B7BF-41F560E20883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D4DFF99-24C0-4E7B-B7BF-41F560E20883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02163431-CB2C-44B5-93F6-114D64BDDF9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02163431-CB2C-44B5-93F6-114D64BDDF9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02163431-CB2C-44B5-93F6-114D64BDDF9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02163431-CB2C-44B5-93F6-114D64BDDF9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

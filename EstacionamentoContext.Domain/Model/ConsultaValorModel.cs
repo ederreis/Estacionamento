@@ -1,9 +1,8 @@
-﻿namespace EstacionamentoContext.Domain.Model
-{
-	public class ConsultaValorModel
-	{
-		public string RegistroPlaca { get; set; } = string.Empty;
+﻿namespace EstacionamentoContext.Domain.Model;
 
-		public string CpfCondutor { get; set; } = string.Empty;
-	}
+public class ConsultaValorModel
+{
+	public string RegistroPlaca { get; set; } = string.Empty;
+
+	public string CpfCondutor { get; set; } = string.Empty;
 }

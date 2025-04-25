@@ -1,6 +1,6 @@
 ﻿using EstacionamentoContext.Domain.Entidades.Parametrizacoes;
-using EstacionamentoContext.Domain.ObjetoValores;
 using EstacionamentoContext.Domain.Interface;
+using EstacionamentoContext.Domain.ObjetoValores;
 
 namespace EstacionamentoContext.Tests.Fake
 {
@@ -10,9 +10,9 @@ namespace EstacionamentoContext.Tests.Fake
 
 		public FakeEstacionamentoLivreRepositorio()
 		{
-			
+
 		}
-		
+
 		public IReadOnlyCollection<EstacionamentoLivre> ListarEstacionamentoLivre()
 		{
 			if (_estacionamentoLivre.Any())
@@ -48,7 +48,7 @@ namespace EstacionamentoContext.Tests.Fake
 
 		public void Salvar()
 		{
-			
+
 		}
 	}
 }

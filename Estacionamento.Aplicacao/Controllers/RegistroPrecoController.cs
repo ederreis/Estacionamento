@@ -1,11 +1,11 @@
-﻿using EstacionamentoContext.Domain.Comandos;
-using EstacionamentoContext.Domain.Handlers;
+﻿using EstacionamentoContext.Services.Comandos;
+using EstacionamentoContext.Services.Handlers;
 using EstacionamentoContext.Domain.Interface;
 using EstacionamentoContext.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace EstacionamentoContext.Domain.Controllers
+namespace EstacionamentoContext.Aplicacao.Controllers
 {
 	[ApiController]
 	public class RegistroPrecoController : ControllerBase

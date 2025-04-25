@@ -8,30 +8,29 @@ using EstacionamentoContext.Domain.Entidades.Cliente;
 using EstacionamentoContext.Domain.Entidades.Parametrizacoes;
 using Microsoft.EntityFrameworkCore;
 
-namespace Estacionamento.Infra.Contexto
+namespace Estacionamento.Infra.Contexto;
+
+public class EstacionamentoContexto : DbContext
 {
-	public class EstacionamentoContexto : DbContext
+	public DbSet<Veiculo> Veiculos { get; set; } = null!;
+
+	public DbSet<Condutor> Condutores { get; set; } = null!;
+
+	public DbSet<EstacionamentoLivre> EstacionamentoLivre { get; set; } = null!;
+
+	public DbSet<Preco> Precos { get; set; } = null!;
+
+	public DbSet<AluguelVagaAgregado> Agregados { get; set; } = null!;
+
+	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		=> optionsBuilder.UseSqlServer("");
+
+	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
-		public DbSet<Veiculo> Veiculos { get; set; } = null!;
-
-		public DbSet<Condutor> Condutores { get; set; } = null!;
-
-		public DbSet<EstacionamentoLivre> EstacionamentoLivre { get; set; } = null!;
-
-		public DbSet<Preco> Precos { get; set; } = null!;
-
-		public DbSet<AluguelVagaAgregado> Agregados { get; set; } = null!;
-
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-			=> optionsBuilder.UseSqlServer("");
-
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
-		{
-			modelBuilder.ApplyConfiguration(new AluguelVagaAgregadoMap());
-			modelBuilder.ApplyConfiguration(new VeiculoMap());
-			modelBuilder.ApplyConfiguration(new CondutorMap());
-			modelBuilder.ApplyConfiguration(new EstacionamentoLivreMap());
-			modelBuilder.ApplyConfiguration(new PrecoMap());
-		}
+		modelBuilder.ApplyConfiguration(new AluguelVagaAgregadoMap());
+		modelBuilder.ApplyConfiguration(new VeiculoMap());
+		modelBuilder.ApplyConfiguration(new CondutorMap());
+		modelBuilder.ApplyConfiguration(new EstacionamentoLivreMap());
+		modelBuilder.ApplyConfiguration(new PrecoMap());
 	}
 }
