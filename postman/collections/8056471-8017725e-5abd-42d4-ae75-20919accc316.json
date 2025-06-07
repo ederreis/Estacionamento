@@ -1,0 +1,652 @@
+{
+	"info": {
+		"_postman_id": "8056471-8017725e-5abd-42d4-ae75-20919accc316",
+		"name": "IelvRetiroWebApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "RegistrarNovoLogin",
+							"item": [
+								{
+									"name": "/api/Auth/RegistrarNovoLogin",
+									"id": "8056471-fde81b7b-2e9a-45b3-93c8-39ba2d5ae823",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<email>\",\n  \"password\": \"<string>\",\n  \"passwordConfirmacao\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Auth/RegistrarNovoLogin",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Auth",
+												"RegistrarNovoLogin"
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "8056471-0f42f178-ed09-4452-bb13-bba58c64ddb0",
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<email>\",\n  \"password\": \"<string>\",\n  \"passwordConfirmacao\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Auth/RegistrarNovoLogin",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Auth",
+														"RegistrarNovoLogin"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "8056471-d536334e-4f19-4806-8144-a7a3d19da454"
+						},
+						{
+							"name": "Authenticate",
+							"item": [
+								{
+									"name": "/api/Auth/Authenticate",
+									"id": "8056471-4cfe6643-7c97-4169-b4dd-d6b93c63b353",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<email>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Auth/Authenticate",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Auth",
+												"Authenticate"
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "8056471-70a56f33-23a3-4c27-a51a-b6ecf09e3bdc",
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<email>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Auth/Authenticate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Auth",
+														"Authenticate"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "8056471-e426f7b1-683d-4e9c-bc31-7e2f1c7fed93"
+						}
+					],
+					"id": "8056471-5309ff10-7a62-4723-8b57-d6cead67b670"
+				},
+				{
+					"name": "FichaCadastro",
+					"item": [
+						{
+							"name": "Cadastrar",
+							"item": [
+								{
+									"name": "Participante",
+									"item": [
+										{
+											"name": "/api/FichaCadastro/Cadastrar/Participante",
+											"id": "8056471-58432ece-e39e-44b9-afc6-30d488977c7b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"dataNascimento\": \"<string>\",\n  \"acomodacao\": \"<integer>\",\n  \"cpf\": \"<string>\",\n  \"cpfPrincipal\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"contato\": \"<string>\",\n  \"preInscricao\": \"<boolean>\",\n  \"eventoId\": \"<integer>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/FichaCadastro/Cadastrar/Participante",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"FichaCadastro",
+														"Cadastrar",
+														"Participante"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "8056471-d17bc1bd-627a-4958-a86e-24e7df7aa16a",
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"dataNascimento\": \"<string>\",\n  \"acomodacao\": \"<integer>\",\n  \"cpf\": \"<string>\",\n  \"cpfPrincipal\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"contato\": \"<string>\",\n  \"preInscricao\": \"<boolean>\",\n  \"eventoId\": \"<integer>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/FichaCadastro/Cadastrar/Participante",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"FichaCadastro",
+																"Cadastrar",
+																"Participante"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "<boolean>"
+												},
+												{
+													"id": "8056471-2051c2d4-1f5d-4991-ba97-f08b42f9ff52",
+													"name": "Bad Request",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"dataNascimento\": \"<string>\",\n  \"acomodacao\": \"<integer>\",\n  \"cpf\": \"<string>\",\n  \"cpfPrincipal\": \"<string>\",\n  \"nome\": \"<string>\",\n  \"contato\": \"<string>\",\n  \"preInscricao\": \"<boolean>\",\n  \"eventoId\": \"<integer>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/FichaCadastro/Cadastrar/Participante",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"FichaCadastro",
+																"Cadastrar",
+																"Participante"
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "<boolean>"
+												}
+											]
+										}
+									],
+									"id": "8056471-820a355c-8bf3-489d-a001-9e60e3e2b829"
+								}
+							],
+							"id": "8056471-389727a1-55f7-4c3a-835a-dfcba451aab6"
+						},
+						{
+							"name": "Consultar",
+							"item": [
+								{
+									"name": "Participante",
+									"item": [
+										{
+											"name": "{cpf}",
+											"item": [
+												{
+													"name": "{eventoId}",
+													"item": [
+														{
+															"name": "/api/FichaCadastro/Consultar/Participante/:cpf/:eventoId",
+															"id": "8056471-d14cf964-39da-4d80-a3c5-b79e5c9887b3",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/api/FichaCadastro/Consultar/Participante/:cpf/:eventoId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"FichaCadastro",
+																		"Consultar",
+																		"Participante",
+																		":cpf",
+																		":eventoId"
+																	],
+																	"variable": [
+																		{
+																			"id": "127afb79-2bfc-4d43-8390-423700ee8ff1",
+																			"key": "cpf",
+																			"value": "<string>",
+																			"description": "(Required) "
+																		},
+																		{
+																			"id": "98228ced-6cbc-43d6-beff-497d309714da",
+																			"key": "eventoId",
+																			"value": "<integer>",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"id": "8056471-cfb7094c-bf0e-4620-aace-7ed906e2ec18",
+																	"name": "OK",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/FichaCadastro/Consultar/Participante/:cpf/:eventoId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"FichaCadastro",
+																				"Consultar",
+																				"Participante",
+																				":cpf",
+																				":eventoId"
+																			],
+																			"variable": [
+																				{
+																					"key": "cpf"
+																				},
+																				{
+																					"key": "eventoId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "text",
+																	"header": [],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": ""
+																}
+															]
+														}
+													],
+													"id": "8056471-95bc4051-5772-46cf-82ba-6e9421b13814"
+												}
+											],
+											"id": "8056471-00bdb4c1-e331-4dbc-824c-92e236928643"
+										}
+									],
+									"id": "8056471-841345e0-b592-4eb8-a714-7be6ffa53171"
+								}
+							],
+							"id": "8056471-3925f31e-6c0b-4118-8e0f-3744acda4cfa"
+						},
+						{
+							"name": "Planilha",
+							"item": [
+								{
+									"name": "{eventoId}",
+									"item": [
+										{
+											"name": "/api/FichaCadastro/Planilha/:eventoId",
+											"id": "8056471-bf97c730-e454-4b71-b5a0-8c4bf08fa006",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/FichaCadastro/Planilha/:eventoId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"FichaCadastro",
+														"Planilha",
+														":eventoId"
+													],
+													"variable": [
+														{
+															"id": "1f7a332f-087b-4382-9241-ad9918b72612",
+															"key": "eventoId",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "8056471-f0648aa5-80d7-4a6e-a1fe-75bc5f62509e",
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/FichaCadastro/Planilha/:eventoId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"FichaCadastro",
+																"Planilha",
+																":eventoId"
+															],
+															"variable": [
+																{
+																	"key": "eventoId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "8056471-bcf94957-5e32-43a0-9f26-531b5f91bdf3",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "6148a53b-fe41-4c61-b87d-a0e34b19ad4b",
+												"type": "text/javascript",
+												"packages": {},
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "53825f85-b15e-488d-be4a-acc69bf3afea",
+												"type": "text/javascript",
+												"packages": {},
+												"exec": [
+													""
+												]
+											}
+										}
+									]
+								}
+							],
+							"id": "8056471-adec2cec-cdfb-4b6c-8e8c-f36d33af6a07"
+						},
+						{
+							"name": "Teste",
+							"item": [
+								{
+									"name": "/api/FichaCadastro/Teste",
+									"id": "8056471-88a097c2-a2ca-4bdd-8154-7786fc66bbcd",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/FichaCadastro/Teste",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"FichaCadastro",
+												"Teste"
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "8056471-be40c57d-359d-4837-b8c7-19832db8da7a",
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/FichaCadastro/Teste",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"FichaCadastro",
+														"Teste"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "8056471-8812020d-6a7e-41c5-b595-48950d75c1cc"
+						}
+					],
+					"id": "8056471-b371a1da-5c3d-4cf4-8eb3-57acf2b3e27d"
+				}
+			],
+			"id": "8056471-95cdfc3b-ee8d-43e9-8ab8-6ecfff92e9e4"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "79c212ca-d312-4e8e-abeb-5fb203e3ad07",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "1400b29c-759f-49da-b1c0-a6cac80b3e8d",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:7153",
+			"disabled": true
+		},
+		{
+			"key": "baseUrl",
+			"value": "http://145.223.92.81:8089",
+			"type": "string"
+		}
+	]
+}
